@@ -1,12 +1,13 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
+    "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-electron": {
+    "work": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -90,24 +91,24 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "angular-electron:build"
+            "browserTarget": "work:build"
           },
           "configurations": {
             "dev": {
-              "browserTarget": "angular-electron:build:dev"
+              "browserTarget": "work:build:dev"
             },
             "web": {
-              "browserTarget": "angular-electron:build:web"
+              "browserTarget": "work:build:web"
             },
             "production": {
-              "browserTarget": "angular-electron:build:production"
+              "browserTarget": "work:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-electron:build"
+            "browserTarget": "work:build"
           }
         },
         "test": {
@@ -140,7 +141,7 @@
         }
       }
     },
-    "angular-electron-e2e": {
+    "work-e2e": {
       "root": "e2e",
       "projectType": "application",
       "architect": {
@@ -155,7 +156,7 @@
       }
     }
   },
-  "defaultProject": "angular-electron",
+  "defaultProject": "work",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",

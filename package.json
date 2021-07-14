@@ -1,11 +1,11 @@
 {
-  "name": "angular-electron",
-  "version": "10.0.2",
-  "description": "Angular 12 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "name": "work",
+  "version": "1.0.0",
+  "description": "Angular 12 with Electron (Typescript + SASS + Hot Reload) For my work",
+  "homepage": "https://github.com/HWliao/work",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "HWliao",
+    "email": "499606788@qq.com"
   },
   "keywords": [
     "angular",
@@ -29,9 +29,9 @@
     "build": "npm run electron:serve-tsc && ng build --base-href ./",
     "build:dev": "npm run build -- -c dev",
     "build:prod": "npm run build -- -c production",
-    "ng:serve": "ng serve -c web -o",
+    "ng:serve": "ng serve -c web",
     "electron:serve-tsc": "tsc -p tsconfig.serve.json",
-    "electron:serve": "wait-on tcp:4200 && npm run electron:serve-tsc && npx electron . --serve",
+    "electron:serve": "wait-on tcp:4200 && npm run electron:serve-tsc && npx electron . --serve --inspect=5858",
     "electron:local": "npm run build:prod && npx electron .",
     "electron:build": "npm run build:prod && electron-builder build --publish=never",
     "test": "ng test --watch=false",
