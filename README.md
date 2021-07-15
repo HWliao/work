@@ -138,7 +138,7 @@ To do this, using the [electron-builder]:
 ### Using Node.js API in renderer
 According to [Electron's security guidelines](https://www.electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content), Node.js integration is disabled for remote content. This means that **you cannot call any Node.js api in the `packages/renderer` directly**. To do this, you **must** describe the interface in the `packages/preload` where Node.js api is allowed:
 ```ts
-// packages/preload/src/index.ts
+// packages/preload/src/index.tsx
 import {readFile} from 'fs/promises'
 
 const api = {
