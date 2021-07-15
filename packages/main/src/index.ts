@@ -23,7 +23,7 @@ const env = import.meta.env;
 if (env.MODE === 'development') {
   app.whenReady()
     .then(() => import('electron-devtools-installer'))
-    .then(({default: installExtension, VUEJS3_DEVTOOLS}) => installExtension(VUEJS3_DEVTOOLS, {
+    .then(({default: installExtension, REDUX_DEVTOOLS}) => installExtension(REDUX_DEVTOOLS, {
       loadExtensionOptions: {
         allowFileAccess: true,
       },
