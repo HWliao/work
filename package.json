@@ -18,7 +18,7 @@
     "pretypecheck": "npm run buildEnvTypes",
     "typecheck-main": "tsc --noEmit -p packages/main/tsconfig.json",
     "typecheck-preload": "tsc --noEmit -p packages/preload/tsconfig.json",
-    "typecheck-renderer": "vue-tsc --noEmit -p packages/renderer/tsconfig.json",
+    "typecheck-renderer": "tsc --noEmit -p packages/renderer/tsconfig.json",
     "typecheck": "npm run typecheck-main && npm run typecheck-preload && npm run typecheck-renderer"
   },
   "browserslist": [
@@ -49,8 +49,7 @@
     "simple-git-hooks": "^2.5.1",
     "spectron": "^15.0.0",
     "typescript": "^4.3.5",
-    "vite": "^2.4.2",
-    "vue-tsc": "^0.2.0"
+    "vite": "^2.4.2"
   },
   "dependencies": {
     "@fontsource/noto-sans-sc": "^4.5.0",
