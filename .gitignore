@@ -57,3 +57,4 @@ types/env.d.ts
 .idea/httpRequests
 /.idea/csv-plugin.xml
 .idea
+/packages/renderer/tsconfig.tsbuildinfo
