@@ -22,7 +22,15 @@ export default createTheme({
   typography: {
     fontFamily: fontFamily,
     // 中文字体偏大,设置小一点
-    fontSize: 14,
+    fontSize: 12,
+  },
+  palette: {
+    primary: {main: '#96A48B'},
+    secondary: {main: '#D8CAAF'},
+    error: {main: '#802A2A'},
+    warning: {main: '#f7cf74'},
+    info: {main: '#919dd2'},
+    success: {main: '#b2d9ac'},
   },
   shape: {
     // 圆角弄一小点
