@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Link as RouterLink, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Link as RouterLink, Route, Switch,Redirect} from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 import {Fab, makeStyles} from '@material-ui/core';
 import Home from '/@/home/home';
@@ -26,6 +26,7 @@ const App: React.FC = () => {
         HOME
       </Fab>
       <Switch>
+        <Route exact path="/"><Redirect to="/home"/></Route>
         <Route exact path="/home">
           <Home/>
         </Route>
