@@ -21,9 +21,9 @@ const Home: React.FC = () => {
           <Grid container justifyContent="center">
             <Grid container justifyContent="center" spacing={3} className={classes.content}>
               {
-                ['待办', '周报'].map((title,key) => (
+                [{title: '待办', path: 'todo'}, {title: '周报', path: 'weekly'}].map((item, key) => (
                   <Grid item key={key}>
-                    <HomeItem value={title}/>
+                    <HomeItem value={item.title} path={item.path}/>
                   </Grid>
                 ))
               }

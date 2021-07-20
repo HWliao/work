@@ -4,6 +4,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import {Fab, makeStyles} from '@material-ui/core';
 import Home from '/@/home/home';
 import {NotFound} from '/@/not-found/not.found';
+import {Todo} from '/@/todo/todo';
 
 const useStyles = makeStyles(theme => ({
   homeFab: {
@@ -27,6 +28,9 @@ const App: React.FC = () => {
       <Switch>
         <Route exact path="/home">
           <Home/>
+        </Route>
+        <Route exact path="/todo">
+          <Todo/>
         </Route>
         <Route path="*"><NotFound/></Route>
       </Switch>
