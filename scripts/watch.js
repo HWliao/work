@@ -10,7 +10,7 @@ const mode = process.env.MODE = process.env.MODE || 'development';
 
 
 /** @type {import('vite').LogLevel} */
-const LOG_LEVEL = 'warn';
+const LOG_LEVEL = 'info';
 
 
 /** @type {import('vite').InlineConfig} */
@@ -69,7 +69,7 @@ const setupMainPackageWatcher = (viteDevServer) => {
         spawnProcess = null;
       }
 
-      spawnProcess = spawn(String(electronPath), ['.']);
+      spawnProcess = spawn(String(electronPath), ['.','--inspect=5858']);
 
       spawnProcess.stdout.on('data', d => d.toString().trim() && logger.warn(d.toString(), {timestamp: true}));
       spawnProcess.stderr.on('data', d => d.toString().trim() && logger.error(d.toString(), {timestamp: true}));
