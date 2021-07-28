@@ -2,7 +2,6 @@ import {app, BrowserWindow} from 'electron';
 import {join} from 'path';
 import {URL} from 'url';
 
-
 const isSingleInstance = app.requestSingleInstanceLock();
 
 if (!isSingleInstance) {
@@ -17,7 +16,6 @@ app.disableHardwareAcceleration();
  * @see https://github.com/microsoft/TypeScript/issues/41468#issuecomment-727543400
  */
 const env = import.meta.env;
-
 
 // Install "Vue.js devtools"
 if (env.MODE === 'development') {
@@ -84,11 +82,9 @@ app.on('window-all-closed', () => {
   }
 });
 
-
 app.whenReady()
   .then(createWindow)
   .catch((e) => console.error('Failed create window:', e));
-
 
 // Auto-updates
 if (env.PROD) {
@@ -97,4 +93,8 @@ if (env.PROD) {
     .then(({autoUpdater}) => autoUpdater.checkForUpdatesAndNotify())
     .catch((e) => console.error('Failed check updates:', e));
 }
+
+// 初始化远程调用
+import('./ipc.handle');
+
 

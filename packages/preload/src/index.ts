@@ -1,4 +1,4 @@
-import {contextBridge} from 'electron';
+import {contextBridge, ipcRenderer} from 'electron';
 
 const apiKey = 'electron';
 /**
@@ -6,6 +6,7 @@ const apiKey = 'electron';
  */
 const api: ElectronApi = {
   versions: process.versions,
+  invoke: (channel, ...args) => ipcRenderer.invoke(channel, ...args),
 };
 
 if (import.meta.env.MODE !== 'test') {
